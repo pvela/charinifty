@@ -12,6 +12,7 @@ export default makeStyles((theme) => ({
     drawerPaper: {
         position: 'relative',
         whiteSpace: 'nowrap',
+        marginTop: 70,
         width: 240,
         transition: theme.transitions.create('width', {
           easing: theme.transitions.easing.sharp,

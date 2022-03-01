@@ -1,6 +1,6 @@
-import React, { useState,  Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import {
-    Divider,
+  Divider,
   IconButton,
   List,
   ListItem,
@@ -17,7 +17,7 @@ import ContactPageIcon from '@mui/icons-material/ContactPage';
 import Drawer from '@mui/material/Drawer';
 
 function DrawerComponent() {
-    const classes = useStyles();
+  const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <Fragment>
@@ -26,40 +26,39 @@ function DrawerComponent() {
         onClose={() => setOpenDrawer(false)}
         variant="temporary"
         anchor="left"
-        classes={{paper: classes.drawerPaper}}
+        classes={{ paper: classes.drawerPaper }}
       >
         <List>
-        <ListItem onClick={() => setOpenDrawer(false)}>
-           <ListItemIcon>
+          <ListItem button component={Link} to="/" onClick={() => setOpenDrawer(false)}>
+            <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
-
             <ListItemText>
-              <Link to="/" className={classes.link}>Home</Link>
+              Home
             </ListItemText>
           </ListItem>
-          <Divider/>
-          <ListItem onClick={() => setOpenDrawer(false)}>
-              <ListItemIcon>
-                  <InfoIcon />
-              </ListItemIcon>
-              <ListItemText>
-              <Link to="/about" className={classes.link}>About</Link>
+          <Divider />
+          <ListItem button component={Link} to="/about" onClick={() => setOpenDrawer(false)}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText>
+              About
             </ListItemText>
           </ListItem>
-          <Divider/>
-          <ListItem onClick={() => setOpenDrawer(false)}>
+          <Divider />
+          <ListItem button component={Link} to="/contact" onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
               <ContactPageIcon />
             </ListItemIcon>
             <ListItemText>
-              <Link to="/contact" className={classes.link}>Contact</Link>
+              Contact
             </ListItemText>
           </ListItem>
-          <Divider/>
+          <Divider />
         </List>
       </Drawer>
-      <IconButton onClick={() => setOpenDrawer(!openDrawer)}className={classes.icon}>
+      <IconButton onClick={() => setOpenDrawer(!openDrawer)} className={classes.icon}>
         <MenuIcon />
       </IconButton>
     </Fragment>
